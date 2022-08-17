@@ -38,8 +38,9 @@
 <!-- <body class="royal_preloader"> -->
     <body>
             <!-- GSAP-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+        
         <div class="loader-zgf">
             <div class="loader-container">
                 <img draggable="false" src="images/bencogif.gif">
@@ -638,7 +639,7 @@
             </div>
         </section>
 
-        <section class="p-b420">
+        <section class="p-b420 modal-trigger">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -1440,77 +1441,6 @@
             color: white;
         }
 
-        .modal {
-            position: fixed;
-            z-index: 30;
-            display: flex;
-            flex-direction: row;
-            padding: 30px 30px;
-            text-align: left;
-            color: white;
-            width: 400px;
-            height: 220px;
-            right: 2vw;
-            top: 11vh;
-            background-image: linear-gradient(145deg,#809CE5 0%,#6172a0 100%);
-            border-radius: 15px;
-            box-shadow: 18px 18px 40px 0px rgb(2 156 236 / 30%);
-            display: none;
-        }
-
-        .modal svg {
-            position: fixed;
-            top: 15px;
-            right: 15px;
-            width: 20px;
-            height: 20px;
-            filter: invert(100%);
-            -webkit-filter: invert(100%);
-            -moz-filter: invert(100%);
-        }
-
-        .modal .modal-container {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            width: 100%;
-        }
-
-        .modal .modal-text-container {
-            width: 50%;
-        }
-
-        .modal img {
-            margin-left: 10% !important;
-            max-height: 197px;
-            width: auto;
-            object-fit: cover;
-        }
-
-        .modal h1 {
-            color: white; 
-            font-family: 'Red Hat Display', sans-serif; 
-            font-weight: 700;
-            margin: 0;
-        }
-
-        .modal h1:nth-child(1) {
-            /* margin: 0 0 0 7px;   */
-            font-size: 36px;
-            font-weight: 500;
-        }
-
-        .modal h1:nth-child(2) {
-            /* margin: 0 0 0 7px;  */
-            font-size: 50px;
-            text-transform: uppercase;
-        }
-
-        .modal h1:nth-child(3) {
-            font-size: 41px;
-            font-weight: 500;
-        }
-
         .team-slider img {
             height: 370px;
             width: 279px;
@@ -1686,23 +1616,6 @@
                 left: 8px;
             }
 
-            .modal {
-                width: 250px;
-                height: 130px;
-                right: 7vw;
-                top: 80vh;
-            }
-
-            .modal h1:nth-child(1) {
-                font-size: 20px;
-            }
-            .modal h1:nth-child(2) {
-                font-size: 25px;
-            }
-            .modal h1:nth-child(3) {
-                font-size: 21px;
-            }
-
             #contact > div > div {
                 border-radius: 0;
             }
@@ -1781,33 +1694,6 @@
             }
         } */
     </style>
-
-    <script type="text/javascript">
-const modal = document.querySelector('.modal');
-
-function showModal() {
-    modal.style.display="none";
-    gsap.to(modal, {x: 100, duration: 0, opacity: 0});
-    modal.style.display="flex";
-    gsap.to(modal, {x: 0, duration: 0.4, opacity: 1});
-}
-
-ScrollTrigger.create({
-    trigger: ".p-b420",
-    start: "center center",
-    onEnter: self => showModal(),
-    once: true
-});
-
-function hideModal() {
-    gsap.to(modal, {opacity: 0, duration: 0.4});
-
-    window.setTimeout(function () {
-        modal.style.display = 'none';
-    }, 500);
-}
-
-    </script>
 </body>
 </html>
 <script type="text/javascript">
