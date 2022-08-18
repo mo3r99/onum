@@ -854,53 +854,6 @@
         #contact > div > div > div.col-md-6.col-xs-12.align-self-center > div > form > div > h6 > span {
             color: white;
         }
-
-        .scrolling-container {
-            background: url(images/bg-page-header-opaque.png);
-            overflow: hidden;
-            position: absolute;
-            height: 300px;
-            width: 100%;
-            z-index: -1;
-            mix-blend-mode: multiply;
-        }
-
-        .scrolling-container .scrolling-clients {
-            z-index: -1;
-            position: absolute;
-            width: 4580px;
-            top: 11%;
-            left: 0;
-            white-space: nowrap;
-            overflow: hidden;
-            animation-name: client-carousel;
-            animation-timing-function: linear;
-            animation-duration: 30s;
-            animation-iteration-count: infinite;
-        }
-
-        .scrolling-clients img {
-            width: 240px;
-            height: 240px;
-            margin: 0 70px;
-            border-radius: 50px;
-        }
-
-        @keyframes client-carousel {
-            0% {
-                transform: translate(0, 0%);
-            }
-
-            100% {
-                transform: translate(-50.2%, 0%);
-            }
-        }
-
-        @media screen and (max-width: 1300px) {
-            .scrolling-container {
-                display: block;
-            }
-        }
     </style>
     
     <!-- jQuery -->
