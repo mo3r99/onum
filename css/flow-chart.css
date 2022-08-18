@@ -1,0 +1,13 @@
+@import url('fonts/OpenSans-CondBold.ttf');
+
+.flow-chart {
+    width: 70%;
+    margin: auto;
+    height: 50vh;
+    position: relative;
+    bottom: 25rem;
+}
+
+.flow-chart-container {
+    margin: auto
+}
