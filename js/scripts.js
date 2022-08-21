@@ -209,7 +209,7 @@ function hideModal() {
             slidesToShow: 6,
             slidesToScroll: 1,
             arrows: false,
-            autoplaySpeed: 1500,
+            autoplaySpeed: 500,
             dots: false,
             autoplay: true,
             responsive: [
