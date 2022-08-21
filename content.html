@@ -19,6 +19,10 @@
 
 <!-- <body class="royal_preloader"> -->
     <body>
+        <!-- GSAP-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+
         <div class="loader-zgf">
             <div class="loader-container">
                 <img draggable="false" src="images/bencogif.gif">
@@ -406,21 +410,8 @@
     <script src="js/particles.min.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/header-mobile.js"></script>
-    <script src="js/royal_preloader.min.js"></script>
 </body>
 </html>
 <script type="text/javascript">
     window.jQuery = window.$ = jQuery;  
-    (function($) { "use strict";
-        //Preloader
-        Royal_Preloader.config({
-            mode           : 'logo',
-            logo           : 'images/logo-dark.svg',
-            logo_size      : [160, 75],
-            showProgress   : true,
-            showPercentage : true,
-            text_colour: '#000000',
-            background:  '#ffffff'
-        });
-    })(jQuery);
 </script> 
