@@ -2646,6 +2646,10 @@
         top: 80vh;
       }
 
+      .modal img {
+        max-height: 70px;
+      }
+
       .modal h1:nth-child(1) {
           font-size: 20px;
       }
