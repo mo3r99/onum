@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 1500);
 });
 
-const modal = document.querySelector('.modal');
+const modal = document.querySelector('.modal-x');
 
 function showModal() {
     modal.style.display="none";
@@ -47,6 +47,23 @@ function hideModal() {
     }, 500);
 }
 
+const tosPopup = document.querySelector('.tos-popup');
+
+document.addEventListener("DOMContentLoaded", function() {
+    gsap.to(tosPopup, {y: -1000, opacity: 0, duration: 0});
+})
+
+function showTosPopup() {
+    tosPopup.style.display="block";
+    gsap.to(tosPopup, {y: 0, opacity: 1, duration: 0.4});
+}
+
+function hideTosPopup() {
+    gsap.to(tosPopup, {y: -1000, opacity: 0, duration: 1 })
+    window.setTimeout(()=>{
+        tosPopup.style.display="none"
+    }, 1050)
+}
 
 (function( $ ) {
     "use strict";
@@ -297,7 +314,7 @@ function hideModal() {
         $(this).not( '.slick-initialized' ).slick({
             slidesToShow:3,
             slidesToScroll: 3,
-            arrows: false,
+            arrows: true,
             dots: true,
             autoplay: true,
             autoplaySpeed: 6000,
@@ -311,7 +328,7 @@ function hideModal() {
                         slidesToShow: 3,
                         slidesToScroll: 1,
                         infinite: true,
-                        arrows: false,
+                        arrows: true,
                         dots: true
                     }
                 },
@@ -321,7 +338,7 @@ function hideModal() {
                         slidesToShow: 2,
                         slidesToScroll: 1,
                         infinite: true,
-                        arrows: false,
+                        arrows: true,
                         dots: true
                     }
                 },
@@ -330,7 +347,7 @@ function hideModal() {
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1,
-                        arrows: false,
+                        arrows: true,
                         dots: true
                     }
                 }
@@ -344,7 +361,7 @@ function hideModal() {
         $('.slider-product').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
-            arrows: false,
+            arrows: true,
             fade: true,
             asNavFor: '.slider-product-nav',
             autoplay: false
@@ -355,7 +372,7 @@ function hideModal() {
             slidesToScroll: 4,
             asNavFor: '.slider-product',
             dots: false,
-            arrows: false,
+            arrows: true,
             centerMode: false,
             focusOnSelect: true,
             useTransform: false
@@ -395,7 +412,7 @@ function hideModal() {
                             slidesToShow: 3,
                             slidesToScroll: 1,
                             infinite: true,
-                            arrows: false,
+                            arrows: true,
                             dots: true
                         }
                     },
@@ -405,7 +422,7 @@ function hideModal() {
                             slidesToShow: 2,
                             slidesToScroll: 1,
                             infinite: true,
-                            arrows: false,
+                            arrows: true,
                             dots: true
                         }
                     },
@@ -414,7 +431,7 @@ function hideModal() {
                         settings: {
                             slidesToShow: 1,
                             slidesToScroll: 1,
-                            arrows: false,
+                            arrows: true,
                             dots: true
                         }
                     }
@@ -426,7 +443,7 @@ function hideModal() {
             $(this).not( '.slick-initialized' ).slick({
                 slidesToShow: 5,
                 slidesToScroll: 1,
-                arrows: false,
+                arrows: true,
                 dots: true,
                 infinite: false,
                 autoplay: true,
@@ -441,7 +458,7 @@ function hideModal() {
                             slidesToShow: 3,
                             slidesToScroll: 1,
                             infinite: true,
-                            arrows: false,
+                            arrows: true,
                             dots: true
                         }
                     },
@@ -451,7 +468,7 @@ function hideModal() {
                             slidesToShow: 2,
                             slidesToScroll: 1,
                             infinite: true,
-                            arrows: false,
+                            arrows: true,
                             dots: true
                         }
                     },
@@ -460,7 +477,7 @@ function hideModal() {
                         settings: {
                             slidesToShow: 1,
                             slidesToScroll: 1,
-                            arrows: false,
+                            arrows: true,
                             dots: true
                         }
                     }
@@ -508,7 +525,7 @@ function hideModal() {
             $selector.not( '.slick-initialized' ).slick({
                 slidesToShow: 6,
                 slidesToScroll: 1,
-                arrows: false,
+                arrows: true,
                 infinite: false,
                 autoplay: false,
                 adaptiveHeight: true,

@@ -2564,10 +2564,58 @@
    }
 
    /*--------------------------------------------------------------
+   ## TOS Popup
+   --------------------------------------------------------------*/
+
+   .tos-popup {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      z-index: 100;
+      padding: 40px;
+      width: 60%;
+      margin: auto;
+      text-align: center;
+      background-image: linear-gradient(145deg,#809CE5 0%,#6172a0 100%);
+      box-shadow: 13px 13px 40px rgba(36, 0, 74, 0.393);
+      color: white !important;
+      border-radius: 25px;
+      display: none;
+   }
+
+   .tos-popup h4, h3 {
+      color: white;
+   }
+   .tos-popup .popup-body {
+      position: relative;
+      overflow-y: scroll;
+      height: 50vh;
+   }
+
+   .tos-popup .popup-footer {
+      margin-top: 3rem;
+   }
+
+   .btn-primary {
+      background-color: #ffffff;
+      color: black;
+      border: none;
+      border-radius: 12px;
+      padding: 1rem;
+   }
+
+   @media screen and (max-width: 650px) {
+      .tos-popup {
+        width: 80%;
+      }
+   }
+
+   /*--------------------------------------------------------------
    ## Modal
    --------------------------------------------------------------*/
 
-    .modal {
+    .modal-x {
       position: fixed;
       z-index: 30;
       display: flex;
@@ -2585,7 +2633,7 @@
       display: none;
     }
 
-    .modal svg {
+    .modal-x svg {
         position: fixed;
         top: 15px;
         right: 15px;
@@ -2596,67 +2644,63 @@
         -moz-filter: invert(100%);
     }
 
-    .modal .modal-container {
+    .modal-x .modal-container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         width: 100%;
     }
 
-    .modal .modal-text-container {
+    .modal-x .modal-text-container {
         width: 50%;
     }
 
-    .modal img {
+    .modal-x img {
         margin-left: 10% !important;
         max-height: 197px;
         width: auto;
         object-fit: cover;
     }
 
-    .modal h1 {
+    .modal-x h1 {
         color: white; 
         font-family: 'Red Hat Display', sans-serif; 
         font-weight: 700;
         margin: 0;
     }
 
-    .modal h1:nth-child(1) {
+    .modal-x h1:nth-child(1) {
         /* margin: 0 0 0 7px;   */
         font-size: 36px;
         font-weight: 500;
     }
 
-    .modal h1:nth-child(2) {
+    .modal-x h1:nth-child(2) {
         /* margin: 0 0 0 7px;  */
         font-size: 50px;
         text-transform: uppercase;
     }
 
-    .modal h1:nth-child(3) {
+    .modal-x h1:nth-child(3) {
         font-size: 41px;
         font-weight: 500;
     }
 
     @media screen and (max-width: 810px) {
-      .modal {
+      .modal-x {
         width: 250px;
         height: 130px;
         right: 7vw;
         top: 80vh;
       }
 
-      .modal img {
-        max-height: 70px;
-      }
-
-      .modal h1:nth-child(1) {
+      .modal-x h1:nth-child(1) {
           font-size: 20px;
       }
-      .modal h1:nth-child(2) {
+      .modal-x h1:nth-child(2) {
           font-size: 25px;
       }
-      .modal h1:nth-child(3) {
+      .modal-x h1:nth-child(3) {
           font-size: 21px;
       }
     }
