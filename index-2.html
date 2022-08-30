@@ -157,12 +157,12 @@
                 </g>
                 </svg>
             <div class="modal-container">
-                <div class="modal-text-container" onclick="window.location = '#'">
+                <div class="modal-text-container" onclick="window.location = 'moreinfo.html'">
                     <h1>See our</h1>
                     <h1>best</h1>
                     <h1>results</h3>
                 </div>
-                <img onclick="window.location = '#'" src="images/Group_50.png">
+                <img onclick="window.location = 'moreinfo.html'" src="images/Group_50.png">
             </div>
         </div>
         
@@ -510,9 +510,15 @@
                                         data-paddingbottom="[0,0,0,0]"
                                         data-paddingleft="[0,0,0,0]"
                                         
-                                        style="z-index:10;"><a button target="_blank" type="submit" class="octf-btn octf-btn-icon octf-btn-primary"
-                                        href="https://youtu.be/63TqfJnQffo">Watch Our Trailer<i
-                                            class="fas fa-play"></i></a></button>
+                                        style="z-index:10;">
+                                            <!-- <a button target="_blank" type="submit" class="octf-btn octf-btn-icon octf-btn-primary"
+                                            href="https://youtu.be/63TqfJnQffo"> -->
+                                            <a button target="_blank" type="submit" class="octf-btn octf-btn-icon octf-btn-primary"
+                                            href="#" onclick="showVideo()">
+                                                Watch Our Trailer
+                                                <i class="fas fa-play"></i>
+                                            </a>
+                                        </button>
                                     <!-- LAYER 6  Read More-->
                                 </div>
                             </li>             
@@ -523,6 +529,12 @@
                         </div>
                 </div>
             </section>
+            
+            <div class="video">
+                <video width="1920" height="1080" controls>
+                    <source src="assets/Benco_Services_Trailer_v1.mp4">
+                </video>
+            </div>
             
             <div class="landing-image">
                 <!-- <img src="images/landing-image.png" style="width: 85%; position: absolute; right: 0; mix-blend-mode: multiply;"> -->
