@@ -65,6 +65,29 @@ function hideTosPopup() {
     }, 1050)
 }
 
+
+const video = document.querySelector('.video');
+
+document.addEventListener("DOMContentLoaded", function() {
+    gsap.to(video, {opacity: 0, duration: 0});
+})
+
+function showVideo() {
+    video.style.display="block";
+    gsap.to(video, {opacity: 1, duration: 0.4});
+}
+
+function hideVideo() {
+    gsap.to(video, {opacity: 0, duration: 1 })
+    document.querySelector('.video video').pause()
+    window.setTimeout(()=>{
+        video.style.display="none"
+    }, 1050)
+}
+
+
+
+
 (function( $ ) {
     "use strict";
     
