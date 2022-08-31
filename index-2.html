@@ -1343,20 +1343,23 @@
                                     <h6><span>GET IN TOUCH</span></h6>
                                 <h2 class="main-heading">Ready to Get Started?</h2>
                             </div>
-                            <form action="contact.php" class="wpcf7-form" method="POST">
+                            <form id="contact-form" action="contact.php" class="wpcf7-form" method="POST">
                                 <p>
                                     <span class="wpcf7-form-control-wrap your-name">
-                                        <input type="text" name="project-name" id="project-name" class="wpcf7-form-control wpcf7-text" placeholder="Project Name *" required>
+                                        <input type="text" name="project-name" id="project-name" class="wpcf7-form-control wpcf7-text" placeholder="Project Name *" >
+                                        <small></small>
                                     </span>
                                 </p>
                                 <p>
                                     <span class="wpcf7-form-control-wrap your-email">
-                                        <input type="email" name="email" id="email" class="wpcf7-form-control wpcf7-text wpcf7-email" placeholder="Your Email *" required>
+                                        <input type="email" name="email" id="email" class="wpcf7-form-control wpcf7-text wpcf7-email" placeholder="Your Email *" >
+                                        <small></small>
                                     </span>
                                 </p>
                                 <p>
                                     <span class="wpcf7-form-control-wrap your-email">
-                                        <input type="text" name="site" id="site" class="wpcf7-form-control wpcf7-text wpcf7-email" placeholder="Your Site *" required>
+                                        <input type="text" name="site" id="site" class="wpcf7-form-control wpcf7-text wpcf7-email" placeholder="Your Site *" >
+                                        <small></small>
                                     </span>
                                 </p>
 
@@ -1436,11 +1439,11 @@
                                 </p>
                                 <p>
                                     <span class="wpcf7-form-control-wrap your-message">
-                                        <textarea type="text" name="message" id="message" class="wpcf7-form-control wpcf7-textarea" placeholder="Tell us as much about your product as possible so we can tailor our services to your needs" required=""></textarea>
+                                        <textarea type="text" name="message" id="message" class="wpcf7-form-control wpcf7-textarea" placeholder="Tell us as much about your product as possible so we can tailor our services to your needs"></textarea>
                                     </span>
                                 </p>
                                 <p>
-                                    <button type="submit" class="octf-btn octf-btn-primary octf-btn-icon" onclick="window.location='https://calendly.com/bencoservices';">Send Message <i class="flaticon-right-arrow-1"></i></button>
+                                    <button type="submit" class="octf-btn octf-btn-primary octf-btn-icon">Send Message <i class="flaticon-right-arrow-1"></i></button>
                                 </p>
                             </form>
                         </div>
@@ -1542,6 +1545,7 @@
     <script src="js/easypiechart.js"></script>
     <script src="js/particles.min.js"></script>
     <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/formvalidation.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/header-mobile.js"></script>
     <script src="js/royal_preloader.min.js"></script>
