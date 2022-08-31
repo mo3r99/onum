@@ -1,4 +1,3 @@
-
 var loader;
 
 function displayContent() {
@@ -125,12 +124,11 @@ function hideVideo() {
     }, 1050)
 }
 
-
-
-
 (function( $ ) {
     "use strict";
     
+    $('.author-widget_text').readmore({ speed: 175, lessLink: '<a href="#" style="color: white; text-transform: uppercase">Read less</a>', moreLink:  '<a href="#" style="color: white; text-transform: uppercase">Read More</a>', collapsedHeight: 80});
+
     $('.woocommerce-form-coupon-toggle .showcoupon').on("click", function(){
         $(this).toggleClass( "active" );
         if ($(this).hasClass( "active" )) {
