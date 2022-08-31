@@ -2696,6 +2696,10 @@
         top: 80vh;
       }
 
+      .modal-x img {
+        width: 73px;
+      }
+
       .modal-x h1:nth-child(1) {
           font-size: 20px;
           line-height: 20px;
