@@ -2659,7 +2659,6 @@
         margin-left: 10% !important;
         max-height: 197px;
         width: auto;
-        object-fit: cover;
     }
 
     .modal-x h1 {
@@ -2699,12 +2698,15 @@
 
       .modal-x h1:nth-child(1) {
           font-size: 20px;
+          line-height: 20px;
       }
       .modal-x h1:nth-child(2) {
-          font-size: 25px;
+          font-size: 32px;
+          line-height: 32px;
       }
       .modal-x h1:nth-child(3) {
-          font-size: 21px;
+          font-size: 15px;
+          line-height: 26px;
       }
     }
    
