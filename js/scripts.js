@@ -8,6 +8,7 @@ function displayContent() {
 function loadNow(opacity) {
     if (opacity <= 0) {
         displayContent();
+        document.querySelector('body').style.overflowY = 'scroll';
     } else {
         loader.style.opacity = opacity;
         window.setTimeout(function() {
@@ -18,6 +19,7 @@ function loadNow(opacity) {
 
 document.addEventListener("DOMContentLoaded", function() {
     loader = document.querySelector('.loader-zgf');
+    document.querySelector('body').style.overflow = 'hidden';
     window.setTimeout(function() {
         loadNow(1);
     }, 1500);
