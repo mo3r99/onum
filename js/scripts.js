@@ -66,6 +66,44 @@ function hideTosPopup() {
 }
 
 
+const embedsAll = document.querySelectorAll('.page-embed');
+let embed;
+
+document.addEventListener("DOMContentLoaded", function() {
+    embedsAll.forEach(em => {
+        gsap.to(em, {opacity: 0, duration: 0});
+        console.log(em)
+    })
+})
+
+function showEmbed(page) {
+    let pageToShow;
+
+    if (page === 'junglecats'){
+        pageToShow = document.querySelector('.junglecats-embed')
+    } else if (page === 'yummycrypto'){
+        pageToShow = document.querySelector('.yummycrypto-embed')
+    } else {
+        pageToShow = document.querySelector('.generousrobots-embed')
+    }
+
+    pageToShow.style.display="block";
+    gsap.to(pageToShow, {opacity: 1, duration: 0.4});
+}
+
+function hideEmbed() {
+    embedsAll.forEach(em => {
+        gsap.to(em, {opacity: 0, duration: 1 })
+
+        window.setTimeout(()=>{
+            em.style.display="none"
+        }, 1050)
+    })
+}
+
+
+
+
 const video = document.querySelector('.video');
 
 document.addEventListener("DOMContentLoaded", function() {
