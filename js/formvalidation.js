@@ -1,13 +1,11 @@
 //form validation:
 
-const form = document.querySelector('#contact-form');
-const projectName = document.querySelector('#project-name');
-const projectEmail = document.querySelector('#email');
-const projectSite = document.querySelector('#site');
+const form = document.querySelector('.contact-form');
+const projectName = document.getElementById('project-name');
+const projectEmail = document.getElementById('email');
+const projectSite = document.getElementById('site');
 
 const isRequired = value => value === '' ? false : true;
-
-const isBetween = (length, min, max) => length < min || length > max ? false : true;
 
 const isEmailValid = (email) => {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -20,40 +18,34 @@ const isSiteValid = (site) => {
 }
 
 const showError = (input, message) => {
-    const formField = input;
+    input.parentElement.querySelector('.error-message').style.display = "block";
+    input.parentElement.querySelector('.error-message').innerHTML = message;
 
-    formField.classList.add('error');
-
-    const error = formField.querySelector('small');
-    error.textContent = message;
+    input.scrollIntoView();
 };
 
 const checkName = () => {
-    let valid;
-
-    if (!isRequired(projectName)) {
+    if (isRequired(projectName.value) === false) {
         showError(projectName, 'Project name is required');
-        return valid = false;
+        return false;
     } else {
-        return valid = true;
+        return true;
     }
 }
 
 const checkEmail = () => {
-    let valid;
-
-    if (!isRequired(projectEmail) || !isEmailValid(projectEmail)) {
+    if (!isEmailValid(projectEmail.value)) {
         showError(projectEmail, 'Email not valid');
-        return valid = false;
+        return false;
     } else {
-        return valid = true;
+        return true;
     }
 }
 
 const checkSite = () => {
     let valid;
 
-    if (!isRequired(projectSite) || !isSiteValid(projectSite)) {
+    if (!isRequired(projectSite.value) || !isSiteValid(projectSite.value)) {
         showError(projectSite, 'Site is not valid');
         return valid = false;
     } else {
@@ -61,7 +53,7 @@ const checkSite = () => {
     }
 }
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', e => {
     e.preventDefault();
 
     let nameValid = checkName()
@@ -71,7 +63,106 @@ form.addEventListener('submit', (e) => {
     let inputsValid = nameValid && siteValid && emailValid;
 
     if(inputsValid) {
-        window.open('https://calendly.com/bencoservices', '_blank');   
-        console.log('success') 
+        document.querySelector('.error-message').style.display="none";
+
+        let productCheckboxValues = [];
+        let launchDateRadioValue;
+        let interestCheckboxValues = [];
+        let howSoonRadioValue;
+        let budgetRadioValue;
+
+        //find selected product checkboxes 
+        var productCheckboxes = document.getElementsByName('product');
+
+        for (var i = 0, length = productCheckboxes.length; i < length; i++) {
+            if (productCheckboxes[i].checked) {
+                // do whatever you want with the checked radio
+                productCheckboxValues.push(productCheckboxes[i].value);
+            }
+        }
+
+        //launch date radio value
+        var launchDateRadios = document.getElementsByName('launch-date');
+
+        for (var i = 0, length = launchDateRadios.length; i < length; i++) {
+            if (launchDateRadios[i].checked) {
+                // do whatever you want with the checked radio
+                launchDateRadioValue = launchDateRadios[i].value;
+ 
+                // only one radio can be logically checked, don't check the rest
+                break;
+            }
+        }
+
+        //find selected interest checkboxes 
+        var interestCheckboxes = document.getElementsByName('interest');
+
+        for (var i = 0, length = interestCheckboxes.length; i < length; i++) {
+            if (interestCheckboxes[i].checked) {
+                // do whatever you want with the checked radio
+                interestCheckboxValues.push(interestCheckboxes[i].value);
+            }
+        }
+
+        //how-soon radio value
+        var howSoonRadios = document.getElementsByName('how-soon');
+
+        for (var i = 0, length = howSoonRadios.length; i < length; i++) {
+            if (howSoonRadios[i].checked) {
+                // do whatever you want with the checked radio
+                howSoonRadioValue = howSoonRadios[i].value;
+ 
+                // only one radio can be logically checked, don't check the rest
+                break;
+            }
+        }
+
+        //bugdet radio value
+        var budgetRadios = document.getElementsByName('budget');
+
+        for (var i = 0, length = budgetRadios.length; i < length; i++) {
+            if (budgetRadios[i].checked) {
+                // do whatever you want with the checked radio
+                budgetRadioValue = budgetRadios[i].value;
+
+                // only one radio can be logically checked, don't check the rest
+                break;
+            }
+        }
+
+        const productMessage = convertArrayToString(productCheckboxValues);
+        const interestMessage = convertArrayToString(interestCheckboxValues);
+
+        const messageToSend = `
+            Project Name: ${projectName.value} /     --     / 
+            Project Email: ${projectEmail.value} /     --     / 
+            Project Site: ${projectSite.value} /     --     / 
+
+            Products: ${productMessage} /     --     / 
+            Interests: ${interestMessage} /     --     / 
+            How Soon Would you like to begin: ${howSoonRadioValue} /     --     / 
+            Launch Date: ${launchDateRadioValue} /     --     / 
+            Budget: ${budgetRadioValue} /     --          --     / 
+
+            Message: ${document.getElementById('message1').value}
+        `
+        form.message.value = messageToSend;
+
+        emailjs.sendForm('benco_services', 'contact_form', '#contact-form')
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                alert("Thank you for your response.");
+                window.open('https://www.calendly.com/bencoservices', '_blank');
+            }, function(error) {
+                console.log('FAILED...', error);
+            });
     }
 })
+
+function convertArrayToString(array) {
+    let message;
+    for (var i = 0, length = array.length; i < length; i++) {
+        message = `${message}, ${array[i]}`
+    }
+    return message;
+}

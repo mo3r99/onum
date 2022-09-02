@@ -790,20 +790,23 @@
                                 <h6><span>GET IN TOUCH</span></h6>
                             <h2 class="main-heading">Ready to Get Started?</h2>
                         </div>
-                        <form action="contact.php" class="wpcf7-form" method="POST">
+                        <form id="contact-form" class="contact-form wpcf7-form">
                             <p>
                                 <span class="wpcf7-form-control-wrap your-name">
-                                    <input type="text" name="project-name" id="project-name" class="wpcf7-form-control wpcf7-text" placeholder="Project Name *" required>
+                                    <input type="text" name="project-name" id="project-name" class="wpcf7-form-control wpcf7-text" placeholder="Project Name *" required="">
+                                    <label class="error-message"></label>
                                 </span>
                             </p>
                             <p>
                                 <span class="wpcf7-form-control-wrap your-email">
-                                    <input type="email" name="email" id="email" class="wpcf7-form-control wpcf7-text wpcf7-email" placeholder="Your Email *" required>
+                                    <input type="email" name="email" id="email" class="wpcf7-form-control wpcf7-text wpcf7-email" placeholder="Your Email *" required="">
+                                    <label class="error-message"></label>
                                 </span>
                             </p>
                             <p>
                                 <span class="wpcf7-form-control-wrap your-email">
-                                    <input type="text" name="site" id="site" class="wpcf7-form-control wpcf7-text wpcf7-email" placeholder="Your Site *" required>
+                                    <input type="text" name="site" id="site" class="wpcf7-form-control wpcf7-text wpcf7-email" placeholder="Your Site *" required="">
+                                    <label class="error-message"></label>
                                 </span>
                             </p>
 
@@ -813,12 +816,12 @@
                             </div>
                             <p>
                                 <span class="wpcf8-form-control-wrap multiple">
-                                    <input type="checkbox" name="newsletter" value="producttype1">Coin
-                                    <input type="checkbox" name="newsletter" value="producttype2">DEX/Exchange
-                                    <input type="checkbox" name="newsletter" value="producttype3">NFT<br>
-                                    <input type="checkbox" name="newsletter" value="producttype4">GameFi/P2E
-                                    <input type="checkbox" name="newsletter" value="producttype5">DeFi Platform<br>
-                                    <input type="checkbox" name="newsletter" value="producttype6">Other<br>
+                                    <input type="checkbox" name="product" value="Coin">Coin
+                                    <input type="checkbox" name="product" value="Dex/Exchange">DEX/Exchange
+                                    <input type="checkbox" name="product" value="Nft">NFT<br>
+                                    <input type="checkbox" name="product" value="GameFi/P2E">GameFi/P2E
+                                    <input type="checkbox" name="product" value="DeFi-Platform">DeFi Platform<br>
+                                    <input type="checkbox" name="product" value="Other">Other<br>
                                 </span>
                             </p>
 
@@ -828,10 +831,10 @@
                             </div>
                             <p>
                                 <span class="wpcf8-form-control-wrap multiple">
-                                    <input type="checkbox" name="newsletter" value="already_launched">Already Launched
-                                    <input type="checkbox" name="newsletter" value="1month">< 1 month
-                                    <input type="checkbox" name="newsletter" value="1-3months">1-3 months
-                                    <input type="checkbox" name="newsletter" value="3+months">3+ months
+                                    <input type="radio" name="launch-date" value="already_launched">Already Launched
+                                    <input type="radio" name="launch-date" value="1-month">< 1 month
+                                    <input type="radio" name="launch-date" value="1-3months">1-3 months
+                                    <input type="radio" name="launch-date" value="3+months">3+ months
                                 </span>
                             </p>
 
@@ -841,17 +844,17 @@
                             </div>
                             <p>
                                 <span class="wpcf8-form-control-wrap multiple">
-                                    <input type="checkbox" name="newsletter" value="interest1">Marketing
-                                    <input type="checkbox" name="newsletter" value="interest2">Media Buying<br>
-                                    <input type="checkbox" name="newsletter" value="interest3">Social Media Management
-                                    <input type="checkbox" name="newsletter" value="interest4">Graphic Design<br>
-                                    <input type="checkbox" name="newsletter" value="interest5">Press Releases
-                                    <input type="checkbox" name="newsletter" value="interest6">Search Engine Optimization<br>
-                                    <input type="checkbox" name="newsletter" value="interest7">Video Production
-                                    <input type="checkbox" name="newsletter" value="interest8">Celebrity Services<br>
-                                    <input type="checkbox" name="newsletter" value="interest9">Discord/Telegram Services
-                                    <input type="checkbox" name="newsletter" value="interest10">Strategic Partnerships<br>
-                                    <input type="checkbox" name="newsletter" value="interest11">Other
+                                    <input type="checkbox" name="interest" value="Marketing">Marketing
+                                    <input type="checkbox" name="interest" value="Media-buying">Media Buying<br>
+                                    <input type="checkbox" name="interest" value="Social-media-management">Social Media Management
+                                    <input type="checkbox" name="interest" value="GFX-design">Graphic Design<br>
+                                    <input type="checkbox" name="interest" value="Press-releases">Press Releases
+                                    <input type="checkbox" name="interest" value="SEO">Search Engine Optimization<br>
+                                    <input type="checkbox" name="interest" value="Video_Production">Video Production
+                                    <input type="checkbox" name="interest" value="Celeb_Services">Celebrity Services<br>
+                                    <input type="checkbox" name="interest" value="Discord-Telegram">Discord/Telegram Services
+                                    <input type="checkbox" name="interest" value="Stragtegic-Partnerships">Strategic Partnerships<br>
+                                    <input type="checkbox" name="interest" value="Other">Other
                                 </span>
                             </p>
 
@@ -861,9 +864,10 @@
                                 </div>
                                 <p>
                                     <span class="wpcf8-form-control-wrap multiple">
-                                        <input type="checkbox" name="newsletter" value="producttype1">As soon as possible
-                                        <input type="checkbox" name="newsletter" value="producttype2">>1 month<br>
-                                        <input type="checkbox" name="newsletter" value="producttype3">1-3 months
+                                        <input type="radio" name="how-soon" value="ASAP">As soon as possible
+                                        <input type="radio" name="how-soon" value="1-month">>1 month<br>
+                                        <input type="radio" name="how-soon" value="1-3-months">1-3 months
+                                        <br>
                                     </span>
                                 </p>
 
@@ -873,22 +877,24 @@
                             </div>
                             <p>
                                 <span class="wpcf8-form-control-wrap multiple">
-                                    <input type="checkbox" name="newsletter" value="producttype1">$0-$10k
-                                    <input type="checkbox" name="newsletter" value="producttype2">$10-$50k<br>
-                                    <input type="checkbox" name="newsletter" value="producttype3">$50k-$100k
-                                    <input type="checkbox" name="newsletter" value="producttype4">$100k-$250k<br>
-                                    <input type="checkbox" name="newsletter" value="producttype5">$250k-$500k
-                                    <input type="checkbox" name="newsletter" value="producttype6">$500k+
+                                    <input type="radio" name="budget" value="0-10k">$0-$10k
+                                    <input type="radio" name="budget" value="10-50k">$10-$50k<br>
+                                    <input type="radio" name="budget" value="50-100k">$50k-$100k
+                                    <input type="radio" name="budget" value="100-250k">$100k-$250k<br>
+                                    <input type="radio" name="budget" value="250-500k">$250k-$500k
+                                    <input type="radio" name="budget" value="500k+">$500k+
                                 </span>
                             </p>
                             <p>
                                 <span class="wpcf7-form-control-wrap your-message">
-                                    <textarea type="text" name="message" id="message" class="wpcf7-form-control wpcf7-textarea" placeholder="Tell us as much about your product as possible so we can tailor our services to your needs" required=""></textarea>
+                                    <textarea type="text" name="message1" id="message1" class="wpcf7-form-control wpcf7-textarea" placeholder="Tell us as much about your product as possible so we can tailor our services to your needs" required=""></textarea>
                                 </span>
                             </p>
                             <p>
-                                <button type="submit" class="octf-btn octf-btn-primary octf-btn-icon" onclick="window.location='https://calendly.com/bencoservices';">Send Message <i class="flaticon-right-arrow-1"></i></button>
+                                <button type="submit" class="octf-btn octf-btn-primary octf-btn-icon">Send Message <i class="flaticon-right-arrow-1"></i></button>
                             </p>
+
+                            <input type="hidden" name="message">
                         </form>
                     </div>
                 </div>
@@ -998,6 +1004,14 @@
     <script src="js/easypiechart.js"></script>
     <script src="js/particles.min.js"></script>
     <script src="js/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('rgsX5OfHABdOiFaqf');
+        })();
+    </script>
+    <script src="js/formvalidation.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/header-mobile.js"></script>
 </body>
