@@ -8,3 +8,17 @@
 .flow-chart-container {
     margin: auto
 }
+
+.mobile-flowchart {
+    display: none;
+    margin-bottom: 10%;
+}
+
+@media screen and (max-width: 800px) {
+    .flow-chart-container svg {
+        display: none;
+    }
+    .mobile-flowchart {
+        display: block;
+    }
+}
